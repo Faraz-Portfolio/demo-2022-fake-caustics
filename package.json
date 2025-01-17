@@ -1,0 +1,34 @@
+{
+  "name": "2022-fake-caustics",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@gsimone/suzanne": "^0.0.12",
+    "@react-three/drei": "^9.121.2",
+    "@react-three/fiber": "^8.17.12",
+    "gl-noise": "^1.6.1",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "three": "^0.172.0",
+    "three-custom-shader-material": "^6.2.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.18.0",
+    "@types/react": "18.3.1",
+    "@types/react-dom": "18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "eslint": "^9.18.0",
+    "eslint-plugin-react": "^7.37.4",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint-plugin-react-refresh": "^0.4.18",
+    "globals": "^15.14.0",
+    "vite": "^6.0.7"
+  }
+}
