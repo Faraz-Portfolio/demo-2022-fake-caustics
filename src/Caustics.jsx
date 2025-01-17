@@ -3,10 +3,11 @@ import { useFrame } from "@react-three/fiber";
 import { patchShaders } from "gl-noise/build/glNoise.m";
 import { useEffect, useMemo, useRef } from "react";
 import { Box3Helper, MathUtils, Vector3 } from "three";
-import CustomShaderMaterial from "three-custom-shader-material";
-import Lights from "./components/Lights";
+import CustomShaderMaterial from "three-custom-shader-material/vanilla";
+import { Lights } from "./components/Lights";
 
 const center = new Vector3(0, 0, 0);
+
 export default function Caustics({ children }) {
   const lightRef = useRef(null);
   const ref = useRef(null);
@@ -210,7 +211,6 @@ export default function Caustics({ children }) {
   return (
     <>
       <Lights ref={lightRef} />
-
       <group ref={ref}>{children}</group>
     </>
   );
