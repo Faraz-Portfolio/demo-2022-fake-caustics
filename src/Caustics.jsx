@@ -61,7 +61,7 @@ export default function Caustics({ children }) {
           obj.material.dispose();
 
           obj.material = new CustomShaderMaterial({
-            baseMaterial: obj.material,
+            baseMaterial: obj.material.clone(),
             vertexShader: /* glsl */ `
               varying vec3 csm_vWorldPosition;
               varying vec3 csm_vPosition;

@@ -2,10 +2,10 @@ import { useTexture } from "@react-three/drei";
 
 export function Floor({ size = 30, ...props }) {
   const [Albedo, AO, Normal, Roughness] = useTexture([
-    "/pooltiles/tlfmffydy_4K_Albedo.jpg",
-    "/pooltiles/tlfmffydy_4K_AO.jpg",
-    "/pooltiles/tlfmffydy_4K_Normal.jpg",
-    "/pooltiles/tlfmffydy_4K_Roughness.jpg",
+    "/demo-2022-fake-caustics/pooltiles/tlfmffydy_4K_Albedo.jpg",
+    "/demo-2022-fake-caustics/pooltiles/tlfmffydy_4K_AO.jpg",
+    "/demo-2022-fake-caustics/pooltiles/tlfmffydy_4K_Normal.jpg",
+    "/demo-2022-fake-caustics/pooltiles/tlfmffydy_4K_Roughness.jpg",
   ]);
 
   return (
