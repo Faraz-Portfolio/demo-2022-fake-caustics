@@ -1,8 +1,12 @@
-# React + Vite
+# Stylized Caustics
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Fake stylized caustics efffect using Voronoi noise. This is a screen space efffect that is calculated within the bounds of its bounding cube.
 
-Currently, two official plugins are available:
+## How it works
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Buffers containing the color, position and normals of the target scene are rendered. Then, Voronoi noise is calculated for each point in the target scene. The noise is manipulated and shaped to resemble caustics. Then the noise is composited ontop of the target scene color.
+
+## Asset credits
+
+- [Bronze Monkey Statue](https://skfb.ly/oJSMR) - by Igrium is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/)
+-
