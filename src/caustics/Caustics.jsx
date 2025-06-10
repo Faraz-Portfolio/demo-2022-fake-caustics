@@ -57,30 +57,12 @@ export default function Caustics({ children }) {
             voronoi3d((coords + vec3(0.0, 0.0, offset)) * noiseScale).x
           );
 
-          // float scale2 = 1.0;
-          // vec3 noiseScale2 = vec3(scale2, 0.2, scale2);
-          // float t2 =  (uTime * 0.2);
-          // float offset2 = 0.09;
-          // vec3 coords2 = pos;
-          // vec3 n2 = vec3(
-          //   voronoi3d((coords2 + vec3(offset, 0.0, 0.0)) * noiseScale2).x,
-          //   voronoi3d((coords2 + vec3(0.0, offset, 0.0)) * noiseScale2).x,
-          //   voronoi3d((coords2 + vec3(0.0, 0.0, offset)) * noiseScale2).x
-          // );
-
           vec3 n = n1;
           n = pow(n, vec3(3.));
           return clamp(n, 0.0, 1.0);
 
         }
-
-        float mapLinear(float value, float min1, float max1, float min2, float max2) {
-          return min2 + (max2 - min2) * ((value - min1) / (max1 - min1));
-        }
-
-        float clampAndMap(float value, float min1, float max1, float min2, float max2) {
-          return clamp(mapLinear(value, min1, max1, min2, max2), min2, max2);
-        }
+  
 
         float getLuma(vec3 color) {
           return dot(color, vec3(0.2126, 0.7152, 0.0722));
@@ -103,8 +85,6 @@ export default function Caustics({ children }) {
           float shadow = dot(normal, projectorDirection);
           float dotProduct = clamp(shadow, 0.0, 1.0);
 
-
-          // Get noise projected from the light
           vec3 n = getNoise(position);
           n *= dotProduct;
 
@@ -119,7 +99,6 @@ export default function Caustics({ children }) {
           luma = clamp(luma, 0.0, 1.0);
 
           gl_FragColor = vec4(vec3(sceneColor.rgb + (n * luma)), sceneColor.a); 
-          // gl_FragColor = vec4(vec3(luma), 1.0); 
 
           #include <tonemapping_fragment>
           #include <colorspace_fragment>

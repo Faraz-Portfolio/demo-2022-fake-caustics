@@ -75,7 +75,7 @@ export function Scene() {
       <fog attach="fog" args={["#3b9ed1", 0.1, 25]} />
       <color attach="background" args={["#3b9ed1"]} />
 
-      <PerspectiveCamera fov={40} position={[-7, 2, 7]} makeDefault />
+      <PerspectiveCamera fov={40} position={[-7, 4, 7]} makeDefault />
       <CameraRig />
 
       <Suspense>

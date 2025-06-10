@@ -7,12 +7,12 @@ export function CameraRig() {
       state.camera.position,
       [
         -5 + (state.pointer.x * state.viewport.width) / 3,
-        (2 + state.pointer.y) / 2,
+        (4 + state.pointer.y) / 2,
         5,
       ],
       0.5,
       delta
     );
-    state.camera.lookAt(0, 1.2, 0);
+    state.camera.lookAt(0, 1, 0);
   });
 }
